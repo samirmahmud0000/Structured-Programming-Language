@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int base = 0, sum = 0;
+    for (int i = 1; i <= n; i++) {
+        base = base * 10 + i;
+        printf("%d", base);
+        if (i < n) printf(" + ");
+        sum += base;
+    }
+
+    printf(" = %d", sum);
+    return 0;
+}
+                                                //just run the code , Input - 5,10
+                                                                      Output- 13715,1371742105
