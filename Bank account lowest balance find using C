@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int accountNumber;
+    float balance;
+} BankAccount;
+
+int main() {
+    int numAccounts;
+
+    printf("Enter the number of bank accounts: ");
+    scanf("%d", &numAccounts);
+
+    if (numAccounts <= 0) {
+        printf("Invalid number of accounts.\n");
+        return 1;
+    }
+
+    BankAccount *accounts = (BankAccount *)malloc(numAccounts * sizeof(BankAccount));
+    if (accounts == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < numAccounts; i++) {
+        printf("Enter details for account %d:\n", i + 1);
+        printf("Account number: ");
+        scanf("%d", &accounts[i].accountNumber);
+        printf("Balance: ");
+        scanf("%f", &accounts[i].balance);
+    }
+
+    int lowestIndex = 0;
+    for (int i = 1; i < numAccounts; i++) {
+        if (accounts[i].balance < accounts[lowestIndex].balance) {
+            lowestIndex = i;
+        }
+    }
+
+    printf("\nAccount with the lowest balance:\n");
+    printf("Account number: %d\n", accounts[lowestIndex].accountNumber);
+    printf("Balance: %.2f\n", accounts[lowestIndex].balance);
+
+    free(accounts);
+
+    return 0;
+}
