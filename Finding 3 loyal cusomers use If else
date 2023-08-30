@@ -1,0 +1,96 @@
+
+Ms. Isabella wants to find out her best 3 loyal customers. She has the following data of the 
+customer:
+• Customer ID
+• Name
+• Birthday: dd/mm/yyyy
+• House: Gryffindor, Slytherin
+• Purchase Cost of Last 3 Months [9]
+For Example, 11034, Christopher Nolan, 11/06/1945, Gryffindor, [40, 56, 67]
+Loyal Customer will be awarded to the person with the highest average purchase value from each House 
+with the following additional criteria:
+• If House is Gryffindor, he/she must contain “est” in his name.
+• If House is Slytherin, he/she must contain “rus” in her name.
+Write a Program to assist Ms. Isabella. Your Program must contain a structure that will be able to contain 
+the data of a customer. If There is No Loyal Customer from a House Print Nil. Else Print the Customer ..
+
+
+That is the problem and the solve is hereby-
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_CUSTOMERS 100
+
+typedef struct {
+    int customerID;
+    char name[50];
+    char birthday[11];
+    char house[12];
+    int purchase[3];
+    double avgPurchase;
+} Customer;
+
+void calculateAvgPurchase(Customer *customer) {
+    customer->avgPurchase = (customer->purchase[0] + customer->purchase[1] + customer->purchase[2]) / 3.0;
+}
+
+int main() {
+    Customer customers[MAX_CUSTOMERS];
+    int numCustomers;
+    printf("Enter the number of customers: ");
+    scanf("%d", &numCustomers);
+
+    for (int i = 0; i < numCustomers; i++) {
+        printf("Enter details for customer %d:\n", i + 1);
+        printf("Customer ID: ");
+        scanf("%d", &customers[i].customerID);
+        printf("Name: ");
+        scanf("%s", customers[i].name);
+        printf("Birthday (dd/mm/yyyy): ");
+        scanf("%s", customers[i].birthday);
+        printf("House (Gryffindor/Slytherin): ");
+        scanf("%s", customers[i].house);
+        printf("Purchase for the last 3 months:\n");
+        for (int j = 0; j < 3; j++) {
+            printf("Month %d: ", j + 1);
+            scanf("%d", &customers[i].purchase[j]);
+        }
+        calculateAvgPurchase(&customers[i]);
+    }
+
+    Customer bestGryffindor = {"", "", "", "", {0}, 0};
+    Customer bestSlytherin = {"", "", "", "", {0}, 0};
+
+    for (int i = 0; i < numCustomers; i++) {
+        if (strcmp(customers[i].house, "Gryffindor") == 0 && strstr(customers[i].name, "est") != NULL) {
+            if (bestGryffindor.avgPurchase < customers[i].avgPurchase) {
+                bestGryffindor = customers[i];
+            }
+        } else if (strcmp(customers[i].house, "Slytherin") == 0 && strstr(customers[i].name, "rus") != NULL) {
+            if (bestSlytherin.avgPurchase < customers[i].avgPurchase) {
+                bestSlytherin = customers[i];
+            }
+        }
+    }
+
+    if (bestGryffindor.avgPurchase > 0) {
+        printf("Best Gryffindor:\n");
+        printf("Name: %s\n", bestGryffindor.name);
+        printf("Birthday: %s\n", bestGryffindor.birthday);
+        printf("Average Purchase: %.2f\n", bestGryffindor.avgPurchase);
+    } else {
+        printf("Best Gryffindor: Nil\n");
+    }
+
+    if (bestSlytherin.avgPurchase > 0) {
+        printf("Best Slytherin:\n");
+        printf("Name: %s\n", bestSlytherin.name);
+        printf("Birthday: %s\n", bestSlytherin.birthday);
+        printf("Average Purchase: %.2f\n", bestSlytherin.avgPurchase);
+    } else {
+        printf("Best Slytherin: Nil\n");
+    }
+
+    return 0;
+}
