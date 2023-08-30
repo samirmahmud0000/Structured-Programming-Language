@@ -1,0 +1,105 @@
+#include<stdio.h>
+
+#define candidate_count 3
+
+struct candidate{
+char name[100];
+int votecount;
+};
+
+struct candidate candidates[candidate_count];
+int spoiledvotes=0;
+
+void candidatesname(){
+    int i;
+strcpy(candidates[0].name,"BANGLADESH AWAMI LEAGUE");
+strcpy(candidates[1].name,"BANGLADESH NATIONALIST PARTY");
+strcpy(candidates[2].name,"BANGLADESH JAAMAT-E-ISLAMI");
+for(i=0;i<candidate_count;i++){
+    candidates[i].votecount=0;
+}
+}
+
+void castvote(){
+int i,choice;
+printf("\n Please choose your candidate");
+for(i=0;i<candidate_count;i++){
+    printf("\n%d.%s",i+1,candidates[i].name);
+}
+printf("\n");
+printf("\nChoose any of the 1-%d options from above:",candidate_count);
+scanf("%d",&choice);
+if(choice>=1 && choice<=candidate_count){
+    candidates[choice-1].votecount++;
+}
+else{
+    printf("\n *ERROR* Please Try Again");
+    getchar();
+}
+printf("\nThank you for your valuable vote");
+printf("\n");
+}
+
+void displayvote(){
+    int i;
+for(i=0;i<candidate_count;i++){
+    printf("\n %s-%d",candidates[i].name,candidates[i].votecount);
+}
+printf("\n %s-%d", "Spoiled Votes",spoiledvotes);
+}
+
+int leadingcandidate(int start,int max){
+if(start==max){
+    return start;
+}
+int next=leadingcandidate(start+1,max);
+return candidates[start].votecount>candidates[next].votecount ? start:next;
+}
+
+void displayleadingcandidate(int l){
+printf("\ LEADING CANDIDATE ");
+
+if(l!=-1){
+    printf("\n%s",candidates[l].name);
+}
+else{
+    printf("\n NO WIN SITUATION");
+}
+}
+
+int main(){
+candidatesname();
+int choice;
+
+do{
+    printf("\n");
+    printf("\n Welcome to the Voting of Election 2023");
+    printf("\n");
+    printf("\n 1.Cast your vote");
+    printf("\n 2.Find vote count");
+    printf("\n 3.Find the leading candidate");
+    printf("\n 0.EXIT");
+    printf("\n");
+
+    printf("\n Enter your choice=");
+    scanf("%d",&choice);
+
+    switch(choice){
+    case 1:
+        castvote();
+        break;
+    case 2:
+        displayvote();
+        break;
+    case 3:{
+        int leading=leadingcandidate(0,candidate_count-1);
+        displayleadingcandidate(leading);
+        break;
+    }
+    default:
+        printf("\n EXITING FROM THE PROGRAM ");
+}
+}while(choice!=0);
+getchar();
+return 0;
+}
