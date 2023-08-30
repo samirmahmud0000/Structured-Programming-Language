@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void fibonacci(int n) {
+    int fib_sequence[n];
+    
+    fib_sequence[0] = 0;
+    fib_sequence[1] = 1;
+    
+    for (int i = 2; i < n; i++) {
+        fib_sequence[i] = fib_sequence[i - 1] + fib_sequence[i - 2];
+    }
+    
+    printf("Fibonacci Sequence: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fib_sequence[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n = 10;                // Change the value of n to generate different lengths of the Fibonacci sequence
+    fibonacci(n);
+    return 0;
+}
