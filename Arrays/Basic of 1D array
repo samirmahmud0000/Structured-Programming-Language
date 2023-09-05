@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize a 1D array of integers
+    int myArray[] = {10, 20, 30, 40, 50};
+
+    // Calculate the length of the array
+    int length = sizeof(myArray) / sizeof(myArray[0]);
+
+    // Print the elements of the array
+    printf("Elements of the array:\n");
+    for (int i = 0; i < length; i++) {
+        printf("Element %d: %d\n", i, myArray[i]);
+    }
+
+    // Calculate and print the sum of the elements
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += myArray[i];
+    }
+    printf("Sum of the elements: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+Note: This is just a basic code of 1D array now you can run it VScode,Codeblocks,Online compiler.
