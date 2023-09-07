@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Footballer {
+    char name[50];
+    char countryName[50];
+    int jerseyNumber;
+    int numberOfMatchPlayer;
+    int numberOfGoals;
+};
+
+int main() {
+    int n;
+    printf("Enter the number of football players: ");
+    scanf("%d", &n);
+    struct Footballer players[n];
+
+
+    for (int i = 0; i < n; i++){
+        printf("Enter the information for Footballer %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", players[i].name);
+        printf("Country: ");
+        scanf("%s", players[i].countryName);
+        printf("Jersey Number: ");
+        scanf("%d", &players[i].jerseyNumber);
+        printf("Number of Matches Played: ");
+        scanf("%d", &players[i].numberOfMatchPlayer);
+        printf("Number of Goals: ");
+        scanf("%d", &players[i].numberOfGoals);
+    }
+
+
+    char GOAT[50];
+    char KingOfGoldenBoot[50];
+    float maxAverageGoals = 0;
+    int maxGoals = 0;
+
+ 
+    for (int i = 0; i < n; i++) {
+        float averageGoals = (float)players[i].numberOfGoals / players[i].numberOfMatchPlayer;
+        
+    
+        if (averageGoals > maxAverageGoals) {
+            maxAverageGoals = averageGoals;
+            strcpy(GOAT, players[i].name);
+        }
+
+      
+        if (players[i].numberOfGoals > maxGoals) {
+            maxGoals = players[i].numberOfGoals;
+            strcpy(KingOfGoldenBoot, players[i].name);
+        }
+    }
+
+  
+    printf("Greatest Of All Time = %s\n", GOAT);
+    printf("King of Golden Boot = %s\n", KingOfGoldenBoot);
+
+    return 0;
+}
