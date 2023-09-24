@@ -53,7 +53,7 @@ int main() {
         }
     }
 
-  
+
     printf("Greatest Of All Time = %s\n", GOAT);
     printf("King of Golden Boot = %s\n", KingOfGoldenBoot);
 
