@@ -9,15 +9,8 @@ explore and follow me.
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-img {
-  width: 100%;
-}
-</style>
-</head>
-<body>
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" width="128" height="128">
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" width="800" height="500">
 
 </body>
 </html>
