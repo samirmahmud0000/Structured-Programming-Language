@@ -19,7 +19,5 @@ img {
 
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" width="128" height="128">
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" style="width:128px;height:128px;">
-
 </body>
 </html>
