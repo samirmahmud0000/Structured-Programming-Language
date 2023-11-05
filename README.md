@@ -6,4 +6,20 @@ explore and follow me.
 
 
 
-<img src="img_girl.jpg" alt="https://th.bing.com/th/id/OIP.F1kDgdYwt9Xv1AQRfbLT6gHaGN?pid=ImgDet&rs=1" width="500" height="600">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" width="128" height="128">
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+</body>
+</html>
