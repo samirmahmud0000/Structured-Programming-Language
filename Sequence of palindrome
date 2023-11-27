@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void generatePalindrome(int n) {
+    for (int i = 1; i <= n; i++) {
+        printf("%d", i);
+    }
+
+    for (int i = n; i > 0; i--) {
+        printf("%d", i);
+    }
+
+    printf("\n");
+}
+
+int main() {
+    int length;
+
+    printf("Enter the length of the palindrome sequence: ");
+    scanf("%d", &length);
+
+    generatePalindrome(length);
+
+    return 0;
+}
