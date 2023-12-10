@@ -10,7 +10,7 @@ explore and follow me.
 <html>
 <head>
 
-<img src="https://media.geeksforgeeks.org/wp-content/uploads/20230506112814/C-Programming-Language.png" alt="HTML5 Icon" width="800" height="400">
+<img src="https://3.bp.blogspot.com/-Wb8M50ZRKsU/XGqd_liyGoI/AAAAAAAAAnc/PNRYqS-EI7sEJbxc9zS-gURwnR3YdcVogCLcBGAs/s1600/1522635669452_11-min.jpg" alt="HTML5 Icon" width="800" height="400">
 
 </body>
 </html>
