@@ -1,5 +1,5 @@
 
-Ms. Isabella wants to find out her best 3 loyal customers. She has the following data of the 
+/*Ms. Isabella wants to find out her best 3 loyal customers. She has the following data of the 
 customer:
 • Customer ID
 • Name
@@ -13,7 +13,7 @@ with the following additional criteria:
 • If House is Slytherin, he/she must contain “rus” in her name.
 Write a Program to assist Ms. Isabella. Your Program must contain a structure that will be able to contain 
 the data of a customer. If There is No Loyal Customer from a House Print Nil. Else Print the Customer ..
-
+*/
 
 That is the problem and the solve is hereby-
 
