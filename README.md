@@ -3,16 +3,6 @@ make sure that that is the problem of the answer . the questtion answer you find
 thank you again for connect with me , connect with new vision of codes and make it easier . 
 
 Dont get to copy the full access of codes its copyright based & all right served.
-
-#
-#
-#
-#
-#
-#
-#
-
-
 explore and follow me.
 
 
